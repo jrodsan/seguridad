@@ -1,4 +1,4 @@
-# vulnerabilidades
+# ulnerabilidades
 
 aqui veremos algunas vulnerabilidades de algunos sistemas
 
