@@ -21,7 +21,7 @@ Asegúrate de que estén habilitados los requisitos de complejidad, como mayúsc
  <p align="center">
     <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
 </p>
-#### Aplicar Cambios:
+Aplicar Cambios:
 
     Guarda los cambios realizados en las directivas.
 ### Linux
@@ -64,7 +64,7 @@ sudo systemctl restart systemd-logind
 ```
 Estas son configuraciones básicas y debes ajustar los valores según tus políticas de seguridad específicas. Además, ten en cuenta que las configuraciones pueden variar dependiendo de las versiones específicas de los sistemas operativos.
 
-
-
+## Actividad 3- Ataques contra contraseñas en Sistemas Windows – FICHERO SAM -
+tendremos que descargar la herramienta en su pagina web oficial para el sistema operativo que nosotros queramos http://project-rainbowcrack.com/
 
 
