@@ -67,4 +67,38 @@ Estas son configuraciones básicas y debes ajustar los valores según tus polít
 ## Actividad 3- Ataques contra contraseñas en Sistemas Windows – FICHERO SAM -
 tendremos que descargar la herramienta en su pagina web oficial para el sistema operativo que nosotros queramos http://project-rainbowcrack.com/
 
+## proteger el grub
+antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
+``` bash 
+    sudo cp /boot/grub/grub.cfg ~/grub.cfg.old
+
+    sudo cp /etc/grub.d/00_header ~/00_header.old
+
+    sudo cp /etc/grub.d/10_linux ~/10_linux.old
+
+    sudo cp /etc/grub.d/30_os-prober ~/30_os-prober.old
+```
+### definir los usuarios y contraseñas que podran modificar el grub
+
+Para definir los usuarios y las contraseñas de los usuarios, que podrán usar la línea de comandos del grub, y ejecutar y editar las entradas del grub, abriremos una terminal y ejecutar el siguiente comando:
+``` bash
+    sudo nano /etc/grub.d/00_header
+```
+Una vez abierto el editor de textos nano, vamos al final del archivo y tenemos que añadir la lista de usuarios y de contraseñas añadiendo el siguiente texto:
+```bash
+cat << EOF
+set superusers="jesus"
+password jesus 4321
+EOF
+```
+definiendo a jesus como el usuario permitido para para modifica y 4321 la contraseña que le identifica.
+
+Una vez definidos los usuarios y las contraseñas ya podemos guardar los cambios.
+
+**Nota:**  Los usuarios y contraseñas que definamos en este apartado pueden ser completamente diferentes a los usuarios del sistema. Cada uno de los usuarios va separado por una coma.
+
+### Protege contraseña el arranque de los sistemas operativos
+
+
+
 
