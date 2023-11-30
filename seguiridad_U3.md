@@ -1,5 +1,22 @@
 # Seguridad_U3
 ## busqueda de informacion
+**libpam-cracklib:** Mejora la seguridad de contraseñas en un sistema al integrarse con el sistema de autenticación PAM. Permite configurar reglas y restricciones para la creación y modificación de contraseñas de usuarios.
+
+**rainbowcrack:** Herramienta de cracking de contraseñas que utiliza tablas arcoíris precalculadas para acelerar el descifrado. Recupera contraseñas comparando hash almacenados con tablas arcoíris, siendo eficiente en ataques contra contraseñas débiles, pero menos efectiva con salting y contraseñas complejas.
+
+**Pwdump:** Extrae y muestra contraseñas en formato hash almacenadas localmente en sistemas Windows. Facilita el acceso a hashes de contraseñas para análisis o ataques, pero su uso ético es crucial debido a posibles violaciones de privacidad y términos de servicio.
+
+**L0phtCrack:** Herramienta de auditoría de contraseñas que realiza análisis de fuerza bruta y diccionario para evaluar la fortaleza de las contraseñas en un sistema, detectando vulnerabilidades de seguridad.
+
+**NTPWEdit:** Utilidad que permite editar contraseñas de usuarios en sistemas Windows modificando el Registro del sistema, útil en casos de pérdida de contraseña o acceso a cuentas.
+
+**John the Ripper:** Programa de prueba de contraseñas que utiliza métodos de fuerza bruta y ataques de diccionario para descifrar contraseñas, versátil en auditorías de seguridad.
+
+**Shadow Defender:** Crea un entorno virtual aislado en el sistema, permitiendo probar software o navegar de forma segura. Los cambios se revierten al reiniciar, evitando afectar el sistema real.
+
+**Ofris:** Herramienta de seguridad que protege sistemas Linux bloqueando la escritura en directorios importantes, previniendo modificaciones no autorizadas en archivos cruciales.
+
+**Grub2:** Gestor de arranque utilizado en sistemas basados en Unix. Configurable para arrancar varios sistemas operativos, es esencial en el inicio de sistemas Linux y otros compatibles con Unix.
 
 ## Configuración de Contraseñas Seguras en Windows y Linux
 ### Windows
@@ -39,14 +56,12 @@ sudo nano /etc/security/pwquality.conf
 #### Configurar las Directivas de Contraseña:
 Configura las directivas según tus requisitos, por ejemplo:
 ```bash
-minlen = 8
-minclass = 3
-maxrepeat = 2
-minclass = 4
-minclass = 4
-maxclassrepeat = 0
-maxsequence = 3
-maxclassrepeat = 1
+minlen = 8            # Longitud mínima de la cadena: 8 caracteres
+minclass = 4          # Mínimo de clases (tipos de caracteres) requeridas: 4
+maxrepeat = 2         # Máxima repetición de un mismo carácter o grupo: 2 veces
+maxclassrepeat = 1    # Máxima repetición de la misma clase (tipo de carácter): 1 vez
+maxsequence = 3       # Número máximo de secuencias permitidas: 3
+
 ```
 #### Editar el archivo de configuración PAM para contraseñas:
 ahora añadiremos o modificaremo esta linea en la ruta "/etc/pam.d/common-password"
@@ -97,8 +112,23 @@ Una vez definidos los usuarios y las contraseñas ya podemos guardar los cambios
 
 **Nota:**  Los usuarios y contraseñas que definamos en este apartado pueden ser completamente diferentes a los usuarios del sistema. Cada uno de los usuarios va separado por una coma.
 
-### Protege contraseña el arranque de los sistemas operativos
+### Protege el arranque de los sistemas operativos
 
-
+Abrimos una terminal y ejecutamos el siguiente comando:
+```bash
+    sudo nano /etc/grub.d/10_linux
+```
+Una vez abierto el editor de textos localizamos la siguiente linea:
+```bash
+    printf "menuentry '${title}' ${CLASS} {\n" "${os}" "${version}"
+```
+Una vez localizada esta linea, tenemos que modificarla para que los usuarios root y joan tengan que introducir un usuario y contraseña para arrancar Crunchbang. La modificación a realizar es la siguiente:
+```bash
+    printf "menuentry '${title}' ${CLASS} --users jesus {\n" "${os}" "${version}"
+```
+Una vez añadidas las modificaciones, guardamos los cambios realizados en el fichero de configuración. Abrimos una terminal y actualizamos la configuración del grub aplicando el siguiente comando:
+```bash
+    sudo update-grub2
+```
 
 
