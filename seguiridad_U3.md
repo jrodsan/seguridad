@@ -80,7 +80,52 @@ sudo systemctl restart systemd-logind
 Estas son configuraciones básicas y debes ajustar los valores según tus políticas de seguridad específicas. Además, ten en cuenta que las configuraciones pueden variar dependiendo de las versiones específicas de los sistemas operativos.
 
 ## Actividad 3- Ataques contra contraseñas en Sistemas Windows – FICHERO SAM -
-tendremos que descargar la herramienta en su pagina web oficial para el sistema operativo que nosotros queramos http://project-rainbowcrack.com/
+en mi caso utilizare kali linux 
+instalacion de rainbow-crack
+``` bash
+sudo apt install rainbowcrack
+```
+creamos una tabla
+
+``` bash
+sudo rtgen ntlm lowealpha-numeric 1 5 0 2400 10000 0
+```
+
+donde los siguientes parametros son
+``` bash
+- rtgen: Invoca la herramienta RainbowCrack para generar tablas arcoíris.
+
+- ntlm: Especifica el algoritmo de hash, en este caso, NTLM.
+
+- loweralpha-numeric: Define el conjunto de caracteres que se utilizará para generar contraseñas, en este caso, letras minúsculas y dígitos.
+
+- 1: Longitud mínima de contraseña.
+
+- 5: Longitud máxima de contraseña.
+
+- 0: Desplazamiento de reducción, que en este caso es 0.
+
+- 2400: Número de cadenas reducidas generadas por cada cadena original.
+
+- 100000: Número total de cadenas originales generadas.
+
+- 0: Semilla aleatoria inicial para generar cadenas originales.
+```
+
+Ahora hay que ordenar la tabla para poder descifrar el hash (da igual desde que carpeta se lance rtgen la tabla se guarda en esta ruta)
+
+``` bash
+sudo rtsort /usr/share/rainbowcrack
+```
+
+ahora visualizaremos el fichero con un cat para mostrar los datos y selecionar la ultima parte del cada administrador para descrifrar (esta señalado en la imagen)
+ <p align="center">
+    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
+</p>
+
+Ahora podemos descifrar el has de una de las contraseña del SAM, el has es la parte en amarillo
+con el siguiente comando
+
 
 ## proteger el grub
 antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
@@ -113,22 +158,23 @@ Una vez definidos los usuarios y las contraseñas ya podemos guardar los cambios
 **Nota:**  Los usuarios y contraseñas que definamos en este apartado pueden ser completamente diferentes a los usuarios del sistema. Cada uno de los usuarios va separado por una coma.
 
 ### Protege el arranque de los sistemas operativos
-
+primero tendremos que crear un hash de la siguiente manera
 Abrimos una terminal y ejecutamos el siguiente comando:
 ```bash
-    sudo nano /etc/grub.d/10_linux
+    sudo grub-mkpasswd-pbkdf2
 ```
+despues abrimos /etc/default/grub y añadimos el hash y el usuario a la siguiente linea
 Una vez abierto el editor de textos localizamos la siguiente linea:
-```bash
-    printf "menuentry '${title}' ${CLASS} {\n" "${os}" "${version}"
-```
-Una vez localizada esta linea, tenemos que modificarla para que los usuarios root y joan tengan que introducir un usuario y contraseña para arrancar Crunchbang. La modificación a realizar es la siguiente:
-```bash
-    printf "menuentry '${title}' ${CLASS} --users jesus {\n" "${os}" "${version}"
-```
-Una vez añadidas las modificaciones, guardamos los cambios realizados en el fichero de configuración. Abrimos una terminal y actualizamos la configuración del grub aplicando el siguiente comando:
-```bash
-    sudo update-grub2
-```
 
+ <p align="center">
+    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
+</p> 
 
+para cada modificacion que hagamos deberemos hacer un update-grub
+
+tambien tendremos que añadir el usuario y el hashen la ruta /etc/grub.d/40_custom, como en la siguiente imagen
+ <p align="center">
+    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
+</p> 
+
+y ya tendremos configurado un unico usuario para iniciar los sistemas operativos del grub, si queremos añadir mas usuarios simplemente repetiremos los pasos.
