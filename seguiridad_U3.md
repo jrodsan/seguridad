@@ -128,7 +128,26 @@ con el siguiente comando
 
 ## Actividad 4- Ataques contra contraseñas en Sistemas Windows
 utilizaremos pwdump el cual descargaremos desde su web oficial https://www.openwall.com/passwords/windows-pwdump y lo ejecutamos mandando la salida a un archivo
-desde terminal ejecutamos pwdump8.exe >> texto.exe c
+desde terminal 
+````bash
+ejecutamos pwdump8.exe >> texto.exe 
+```
+una vez terminado el programa nos imprimira los hashes del las claves en el txt que hemos especificado.
+
+<p align="center">
+    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
+</p>
+
+Comporbamos que sploits podemos usar para entrar a windwos con el siguiente comando
+msf6 > sudo nmap -Pn -sS -p135,139,445,31337 -sV -O --osscan-guess --script vuln 192.168.1.34 Podemos ver como smb-vuln-ms17-010 es vulnerable
+
+
+
+
+
+
+
+
 
 ## proteger el grub
 antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
