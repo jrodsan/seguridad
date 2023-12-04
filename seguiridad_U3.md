@@ -126,6 +126,9 @@ ahora visualizaremos el fichero con un cat para mostrar los datos y selecionar l
 Ahora podemos descifrar el has de una de las contraseña del SAM, el has es la parte en amarillo
 con el siguiente comando
 
+## Actividad 4- Ataques contra contraseñas en Sistemas Windows
+utilizaremos pwdump el cual descargaremos desde su web oficial https://www.openwall.com/passwords/windows-pwdump y lo ejecutamos mandando la salida a un archivo
+desde terminal ejecutamos pwdump8.exe >> texto.exe c
 
 ## proteger el grub
 antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
@@ -145,7 +148,12 @@ Para definir los usuarios y las contraseñas de los usuarios, que podrán usar l
     sudo nano /etc/grub.d/00_header
 ```
 Una vez abierto el editor de textos nano, vamos al final del archivo y tenemos que añadir la lista de usuarios y de contraseñas añadiendo el siguiente texto:
-```bash
+```bash0378 - Seguridad y Alta Disponibilidad
+Departamento de Informática y Comunicaciones. ASIR . 2º Curso 96
+Hacking de
+contraseñas
+Actividad 4- Ataques contra contraseñas
+en Sistemas Windows
 cat << EOF
 set superusers="jesus"
 password jesus 4321
@@ -158,7 +166,12 @@ Una vez definidos los usuarios y las contraseñas ya podemos guardar los cambios
 **Nota:**  Los usuarios y contraseñas que definamos en este apartado pueden ser completamente diferentes a los usuarios del sistema. Cada uno de los usuarios va separado por una coma.
 
 ### Protege el arranque de los sistemas operativos
-primero tendremos que crear un hash de la siguiente manera
+primero tendremos que crear un hash de la siguiente manera0378 - Seguridad y Alta Disponibilidad
+Departamento de Informática y Comunicaciones. ASIR . 2º Curso 96
+Hacking de
+contraseñas
+Actividad 4- Ataques contra contraseñas
+en Sistemas Windows
 Abrimos una terminal y ejecutamos el siguiente comando:
 ```bash
     sudo grub-mkpasswd-pbkdf2
