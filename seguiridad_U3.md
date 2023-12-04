@@ -129,7 +129,7 @@ con el siguiente comando
 ## Actividad 4- Ataques contra contraseñas en Sistemas Windows
 utilizaremos pwdump el cual descargaremos desde su web oficial https://www.openwall.com/passwords/windows-pwdump y lo ejecutamos mandando la salida a un archivo
 desde terminal 
-````bash
+```bash
 ejecutamos pwdump8.exe >> texto.exe 
 ```
 una vez terminado el programa nos imprimira los hashes del las claves en el txt que hemos especificado.
