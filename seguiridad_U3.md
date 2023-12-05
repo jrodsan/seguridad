@@ -149,7 +149,29 @@ msf6 > sudo nmap -Pn -sS -p135,139,445,31337 -sV -O --osscan-guess --script vuln
 
 
 
-## proteger el grub
+
+## Actividad 5.- Ataques contra contraseñas en Sistemas Linux
+Usaremos Kali en esta práctica.
+
+Ejecutamos el siguiente comando para actualizar los repositorios:
+``` bash 
+sudo apt update
+sudo apt-get install john
+```
+
+Ahora creamos un archivo txt a partir del archivo /etc/passwd y /etc/shadow
+
+```bash
+sudo unshadow /etc/passwd /etc/shadow >> hashes.out
+```
+Ejecutamos John the Ripper directamente:
+``` bash
+sudo john --format=crypt ./hashes.out
+```
+
+Como podemos ver nos muestra el usuario y contraseña de en este caso.
+
+## 7 proteger el grub
 antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
 ``` bash 
     sudo cp /boot/grub/grub.cfg ~/grub.cfg.old
@@ -184,7 +206,7 @@ Una vez definidos los usuarios y las contraseñas ya podemos guardar los cambios
 
 **Nota:**  Los usuarios y contraseñas que definamos en este apartado pueden ser completamente diferentes a los usuarios del sistema. Cada uno de los usuarios va separado por una coma.
 
-### Protege el arranque de los sistemas operativos
+###  Protege el arranque de los sistemas operativos
 primero tendremos que crear un hash de la siguiente manera0378 - Seguridad y Alta Disponibilidad
 Departamento de Informática y Comunicaciones. ASIR . 2º Curso 96
 Hacking de
