@@ -199,7 +199,7 @@ Algunos de lo congeladores mas populares son:
 
 - **Anvi Rescue Disk**: Crea un entorno seguro para limpiar el sistema y deshacer cambios maliciosos.
 
-Aquí veremos el uso de **Deep Freeze** y **Toolwiz Time Freeze**
+Aquí veremos el uso de **Drive Vaccine** y **HDGuard**
 
 
 
