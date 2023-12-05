@@ -169,7 +169,31 @@ Ejecutamos John the Ripper directamente:
 sudo john --format=crypt ./hashes.out
 ```
 
-Como podemos ver nos muestra el usuario y contraseña de en este caso.
+ya poemos ver nos muestra el usuario y contraseña.
+
+## Actividad 6.- Realiza un listado de este tipo de herramientas y analiza la instalación y configuración de 2 congeladores
+
+Algunos de lo congeladores mas populares son:
+
+- **Deep Freeze**: Mantiene la configuración original del sistema, eliminando cualquier cambio realizado durante el reinicio.
+
+- **Drive Vaccine**: Permite revertir el sistema a un estado anterior para eliminar cambios no deseados.
+
+- **Returnil System Safe**: Crea una copia virtual del sistema para protegerlo contra cambios no deseados.
+
+- **SmartShield**: Protege el sistema contra cambios no autorizados y facilita la restauración del estado original.
+
+- **WinGuard Pro**: Permite proteger el sistema contra cambios y configurar restricciones de acceso.
+
+- **Drive Cloner Rx**: Crea instantáneas del sistema para facilitar la recuperación después de cambios no deseados.
+
+- **HDGuard**: Protege el sistema y permite la reversión a un estado anterior.
+
+- **Anvi Rescue Disk**: Crea un entorno seguro para limpiar el sistema y deshacer cambios maliciosos.
+
+Aquí veremos el uso de **Deep Freeze** y **Toolwiz Time Freeze**
+
+
 
 ## 7 proteger el grub
 antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
