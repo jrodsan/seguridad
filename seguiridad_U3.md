@@ -138,8 +138,16 @@ una vez terminado el programa nos imprimira los hashes del las claves en el txt 
     <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
 </p>
 
-Comporbamos que sploits podemos usar para entrar a windwos con el siguiente comando
-msf6 > sudo nmap -Pn -sS -p135,139,445,31337 -sV -O --osscan-guess --script vuln 192.168.1.34 Podemos ver como smb-vuln-ms17-010 es vulnerable
+### Hiren's BootCD
+
+La herramienta de Hiren's BootCD es un recopilador de herramientas el cual nos servira para descrfrar los hash, podremos descargarlo de su pagina oficial https://www.hirensbootcd.org/download/ .
+
+Una vez hayamos booteado el sistema iremos a  "Utilities" y una vez dentro iremos a "Security -> Passwords", allí tendremos la herramienta "NT Password Edit"
+
+una vez abierta podemos darle a open y selecionar la ruta donde esta el fichero sam.
+
+nos dara los usuarios y podremos cambiar la contraseña por la que queramos.
+
 
 
 
