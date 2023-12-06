@@ -230,9 +230,6 @@ nos aparecera una pestaña de aviso en la que resumidamente nos dice que guardem
 
  ### Shadow defender
  la instalacion de esta aplicacion es muy similar a la anterior, siguiendo los pasos del assitente de instalacion nos pedira reiniciar y despues del reinicio ya estará instalado el programa
- <p align="center">
-    <img src="imgu3/returnil1.png" alt="captura1_actividad3" width="auto">
-</p>
 
 una vez dentro del programa vamos a la seccin de *mode*  y selecionamos el disco en cuestion y le damos a shadow mode
 
