@@ -30,14 +30,12 @@ Longitud Mínima de la Contraseña:
 Configura la longitud mínima de la contraseña según tus requisitos.
 
  <p align="center">
-    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
+    <img src="imgu3/directivasContraseñaWindows.png" alt="captura1_actividad3" width="auto" >
 </p>
 
 Requisitos de Complejidad:
 Asegúrate de que estén habilitados los requisitos de complejidad, como mayúsculas, minúsculas, números y caracteres especiales.
- <p align="center">
-    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
-</p>
+
 Aplicar Cambios:
 
     Guarda los cambios realizados en las directivas.
@@ -120,11 +118,18 @@ sudo rtsort /usr/share/rainbowcrack
 
 ahora visualizaremos el fichero con un cat para mostrar los datos y selecionar la ultima parte del cada administrador para descrifrar (esta señalado en la imagen)
  <p align="center">
-    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
+    <img src="imgu3/sam3.png" alt="captura1_actividad3" width="auto" >
 </p>
 
-Ahora podemos descifrar el has de una de las contraseña del SAM, el has es la parte en amarillo
+Ahora podemos descifrar el has de una de las contraseña del SAM
 con el siguiente comando
+rcrack /usr/share/rainbowcrack -h "el hash correspondiendte que queremos descifrar"
+
+ <p align="center">
+    <img src="imgu3/sam4.png" alt="captura1_actividad3" width="auto" >
+</p>
+
+y aqui vemos en result la contraseña "12345"
 
 ## Actividad 4- Ataques contra contraseñas en Sistemas Windows
 utilizaremos pwdump el cual descargaremos desde su web oficial https://www.openwall.com/passwords/windows-pwdump y lo ejecutamos mandando la salida a un archivo
@@ -132,11 +137,12 @@ desde terminal
 ```bash
 ejecutamos pwdump8.exe >> texto.exe 
 ```
+<p align="center">
+    <img src="imgu3/pwd1.png" alt="captura1_actividad3" width="auto">
+</p>
+
 una vez terminado el programa nos imprimira los hashes del las claves en el txt que hemos especificado.
 
-<p align="center">
-    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
-</p>
 
 ### Hiren's BootCD
 
@@ -148,7 +154,9 @@ una vez abierta podemos darle a open y selecionar la ruta donde esta el fichero 
 
 nos dara los usuarios y podremos cambiar la contraseña por la que queramos.
 
-
+<p align="center">
+    <img src="imgu3/pwd2.png" alt="captura1_actividad3" width="auto">
+</p>
 
 
 
@@ -179,6 +187,10 @@ sudo john --format=crypt ./hashes.out
 
 ya poemos ver nos muestra el usuario y contraseña.
 
+<p align="center">
+    <img src="imgu3/jhon1.png" alt="captura1_actividad3" width="auto" >
+</p>
+
 ## Actividad 6.- Realiza un listado de este tipo de herramientas y analiza la instalación y configuración de 2 congeladores
 
 Algunos de lo congeladores mas populares son:
@@ -207,14 +219,21 @@ la primera vez que lo instalemos nos pedira que version usar, la de pago, la gra
 acontinuacion de iniciara un proceso de escaneo del sistema.
 una vez haya acabado mostrara el panel principal el cual deberemos ir a virtual mode y activar star virtual mode
 
+
+
 nos aparecera una pestaña de aviso en la que resumidamente nos dice que guardemos todos los archivos importantes antes de proceder con la virtualizacion y que no se mantendra ningun cambio despues de reiniciar su ordenador a menos que lo guardes en una unidad extraible
 
  ### Shadow defender
  la instalacion de esta aplicacion es muy similar a la anterior, siguiendo los pasos del assitente de instalacion nos pedira reiniciar y despues del reinicio ya estará instalado el programa
- 
+ <p align="center">
+    <img src="imgu3/returnil1.png" alt="captura1_actividad3" width="auto">
+</p>
+
 una vez dentro del programa vamos a la seccin de *mode*  y selecionamos el disco en cuestion y le damos a shadow mode
 
-imagen
+<p align="center">
+    <img src="imgu3/returnil2.png" alt="captura1_actividad3" width="auto">
+</p>
 
 para desactivar este modo solo tenemos que darle a exit shadow defender y el programa nos suguiere que reiniciemos.
 
@@ -267,15 +286,15 @@ Abrimos una terminal y ejecutamos el siguiente comando:
 despues abrimos /etc/default/grub y añadimos el hash y el usuario a la siguiente linea
 Una vez abierto el editor de textos localizamos la siguiente linea:
 
- <p align="center">
-    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
-</p> 
+<p align="center">
+    <img src="imgu3/7grub.png"  width="auto">
+</p>
 
 para cada modificacion que hagamos deberemos hacer un update-grub
 
 tambien tendremos que añadir el usuario y el hashen la ruta /etc/grub.d/40_custom, como en la siguiente imagen
- <p align="center">
-    <img src="imagenes/A3_3.PNG" alt="captura1_actividad3" width="430" height="318">
-</p> 
+<p align="center">
+    <img src="imgu3/7grub2.png"  width="auto">
+</p>
 
 y ya tendremos configurado un unico usuario para iniciar los sistemas operativos del grub, si queremos añadir mas usuarios simplemente repetiremos los pasos.
