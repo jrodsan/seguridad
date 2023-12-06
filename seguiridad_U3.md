@@ -212,9 +212,11 @@ nos aparecera una pestaña de aviso en la que resumidamente nos dice que guardem
  ### Shadow defender
  la instalacion de esta aplicacion es muy similar a la anterior, siguiendo los pasos del assitente de instalacion nos pedira reiniciar y despues del reinicio ya estará instalado el programa
  
-sw
- 
+una vez dentro del programa vamos a la seccin de *mode*  y selecionamos el disco en cuestion y le damos a shadow mode
 
+imagen
+
+para desactivar este modo solo tenemos que darle a exit shadow defender y el programa nos suguiere que reiniciemos.
 
 ## 7 proteger el grub
 antes de hacer nada es muy recomendable hacer una copia de los ficheros que vamos a modificar
