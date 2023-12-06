@@ -199,8 +199,21 @@ Algunos de lo congeladores mas populares son:
 
 - **Anvi Rescue Disk**: Crea un entorno seguro para limpiar el sistema y deshacer cambios maliciosos.
 
-Aquí veremos el uso de **Drive Vaccine** y **HDGuard**
+Aquí veremos el uso de **Renturnil system safe** y **Shadow defender**
 
+### Renturnil system safe
+Descargaremos el instalador y lo instalaremos de manera habitual.
+la primera vez que lo instalemos nos pedira que version usar, la de pago, la gratuita o una version de prueba, yo seleccionare la version gratis 
+acontinuacion de iniciara un proceso de escaneo del sistema.
+una vez haya acabado mostrara el panel principal el cual deberemos ir a virtual mode y activar star virtual mode
+
+nos aparecera una pestaña de aviso en la que resumidamente nos dice que guardemos todos los archivos importantes antes de proceder con la virtualizacion y que no se mantendra ningun cambio despues de reiniciar su ordenador a menos que lo guardes en una unidad extraible
+
+ ### Shadow defender
+ la instalacion de esta aplicacion es muy similar a la anterior, siguiendo los pasos del assitente de instalacion nos pedira reiniciar y despues del reinicio ya estará instalado el programa
+ 
+sw
+ 
 
 
 ## 7 proteger el grub
