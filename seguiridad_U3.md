@@ -218,10 +218,15 @@ Descargaremos el instalador y lo instalaremos de manera habitual.
 la primera vez que lo instalemos nos pedira que version usar, la de pago, la gratuita o una version de prueba, yo seleccionare la version gratis 
 acontinuacion de iniciara un proceso de escaneo del sistema.
 una vez haya acabado mostrara el panel principal el cual deberemos ir a virtual mode y activar star virtual mode
-
+ <p align="center">
+    <img src="imgu3/returnil1.png" alt="captura1_actividad3" width="auto">
+</p>
 
 
 nos aparecera una pestaña de aviso en la que resumidamente nos dice que guardemos todos los archivos importantes antes de proceder con la virtualizacion y que no se mantendra ningun cambio despues de reiniciar su ordenador a menos que lo guardes en una unidad extraible
+<p align="center">
+    <img src="imgu3/returnil2.png" alt="captura1_actividad3" width="auto">
+</p>
 
  ### Shadow defender
  la instalacion de esta aplicacion es muy similar a la anterior, siguiendo los pasos del assitente de instalacion nos pedira reiniciar y despues del reinicio ya estará instalado el programa
@@ -232,7 +237,7 @@ nos aparecera una pestaña de aviso en la que resumidamente nos dice que guardem
 una vez dentro del programa vamos a la seccin de *mode*  y selecionamos el disco en cuestion y le damos a shadow mode
 
 <p align="center">
-    <img src="imgu3/returnil2.png" alt="captura1_actividad3" width="auto">
+    <img src="imgu3/shadow.png" alt="captura1_actividad3" width="auto">
 </p>
 
 para desactivar este modo solo tenemos que darle a exit shadow defender y el programa nos suguiere que reiniciemos.
