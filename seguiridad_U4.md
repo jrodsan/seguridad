@@ -80,3 +80,75 @@ donde:
 <p align="center">
     <img src="imgu4/9.png" width="auto" >
 </p>
+# Firma digital con gpg
+## 1. Selecciona un documento pdf y encríptalo y fírmalo (opción –sign). Envíalo a un compañero, que debe en primer lugar verificar la firma y posteriormente descifrar el documento.
+Cifraremos un archivo en este caso el mismo pdf de la practica
+**gpg -c archivo.pdf**
+
+ <p align="center">
+    <img src="imgu4/10.png" width="auto" >
+</p>
+una vez lo tengamos encriptado lo firmaremos.
+Antes de hacer nada deberemos asegurarnos de que tenemos alguna clave privada con elsifuiente  comando
+
+**gpg --list-secret-keys**
+en el caso de no tener usariamos **gpg --gen-key** para generar una, te pedira el nombre real , un correo electronico  y escribir tu contraseña
+
+una vez ya lo tengamos podemos proceder a firmar
+
+para firmar  un documento lo haremos con el siguiente comando **gpg  --output archivo_firmado.gpg archivo_original.pdf**
+el programa nos avisa de que ya hay un archivo con ese nombre y nos da la posibilidad de renombrarlo o machacarlo. 
+
+ <p align="center">
+    <img src="imgu4/11.png" width="auto" >
+</p>
+
+Y ya tendremos el archivo firmado e encriptado
+ <p align="center">
+    <img src="imgu4/12.png" width="auto" >
+</p>
+
+para verificar la firma usaremos el siguiente comando **gpg --verify archivo_firmado.gpg**
+
+nos imprimirá en pantalla quien es el causante de esta firma entro otros datos como el **RSA**
+ <p align="center">
+    <img src="imgu4/13.png" width="auto" >
+</p>
+
+tenemos que darle la clave publica a nuestro compañero lo haremos de la siguiente manera
+gpg --export --armor [jrodsan233y@g.educaand.es](mailto:jrodsan233y@g.educaand.es) > clave_publica.asc
+de esta manera exportamos las claves a un .asc con formato de salida ASCII que se lo daremos al compañero.
+
+ahora el compañero debe agrega la clave a su llavero con el comando **gpg --import clave_publica.asc**
+ <p align="center">
+    <img src="imgu4/14.png" width="auto" >
+</p>
+
+y lo descifraremos con la opcion -o para que genere un archivo nuevo con el resultado
+**gpg -d -o archivo_descifrado.pdf PRACTICA2FIR.pdf.gpg**
+
+ <p align="center">
+    <img src="imgu4/15.png" width="auto" >
+</p>
+## 2. Realiza el mismo ejercicio pero obteniendo una firma ASCII.
+ Seguiremos los mismos pasos que anteriormente pero a la hora de exportar la clave usamos la opcion –armor
+gpg --export --armor [jrodsan233y@g.educaand.es](mailto:jrodsan233y@g.educaand.es) > clave_publica.asc
+
+## 3. Ahora sólo queremos firmar un documento. Firma un documento (opción --detach-sign). A continuación envía el documento original y la firma a un compañero para que verifique que el documento está firmado por tí.
+Firmaremos el documento con el comando
+
+**gpg --detach-sign documento.txt**
+
+ <p align="center">
+    <img src="imgu4/16.png" width="auto" >
+</p>
+
+y le enviaremos el documento y la clave publica al compañero
+importaremos la clave con **gpg --import clave_publica.asc**
+y verificaremos la firma con el comando **gpg --verify documento.txt.asc documento.txt.gpg** 
+o lo desencriptamos directamente
+**gpg --decrypt archivo_secreto.txt.sig > documentodesencripta**
+**do.txt**
+ <p align="center">
+    <img src="imgu4/17.png" width="auto" >
+</p>
