@@ -80,6 +80,7 @@ donde:
 <p align="center">
     <img src="imgu4/9.png" width="auto" >
 </p>
+
 # Firma digital con gpg
 ## 1. Selecciona un documento pdf y encríptalo y fírmalo (opción –sign). Envíalo a un compañero, que debe en primer lugar verificar la firma y posteriormente descifrar el documento.
 Cifraremos un archivo en este caso el mismo pdf de la practica
@@ -130,6 +131,7 @@ y lo descifraremos con la opcion -o para que genere un archivo nuevo con el resu
  <p align="center">
     <img src="imgu4/15.png" width="auto" >
 </p>
+
 ## 2. Realiza el mismo ejercicio pero obteniendo una firma ASCII.
  Seguiremos los mismos pasos que anteriormente pero a la hora de exportar la clave usamos la opcion –armor
 gpg --export --armor [jrodsan233y@g.educaand.es](mailto:jrodsan233y@g.educaand.es) > clave_publica.asc
