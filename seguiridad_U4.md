@@ -402,3 +402,188 @@ La clave del equipo remoto ha cambiado.
 ### ¿Qué guardamos y para qué sirve el fichero en el servidor ~/.ssh/authorized_keys?
 
 El archivo Authorized_keys en SSH especifica las claves SSH que se pueden usar para iniciar sesión en la cuenta de usuario para la que está configurado el archivo. Es un archivo de configuración muy importante, ya que configura el acceso permanente mediante claves SSH y necesita una gestión adecuada.
+
+
+# cifrado asimetrico
+
+## 1. Genera un par de claves (pública y privada). ¿En que directorio se guarda las claves de un usuario?
+
+Para generar claves publicas y privadas usamos gpg –gen-key
+
+<p align="center">
+    <img src="imgu4/30.png" width="auto" >
+</p>
+
+se guardan en ls ~/.gnupg
+
+### 2. Lista las claves públicas que tienes en tu almacén de claves. Explica los distintos datos que nos muestra. ¿Cómo deberías haber generado las claves para indicar, por ejemplo, que tenga un 1 mes de validez?
+
+Para listar las claves usamos gpg --list-keys
+
+<p align="center">
+    <img src="imgu4/31.png" width="auto" >
+</p>
+
+para generar las claves con un mes de expiración usaremos ese comando 
+**gpg --gen-key --expires 1m**
+
+### 3. Lista las claves privadas de tu almacén de claves.
+
+Para listar las claves privadas del almacen usaremos el comando:
+**gpg --list-secret-keys**
+
+### 1. Exporta tu clave pública en formato ASCII y guardalo en un archivo nombre_apellido.asc y envíalo al compañero con el que vas a hacer esta práctica.
+
+Para exhortar mi clave publica en formto ASCII y guardarlo en un archivo .asc lo haremos de la siguiente manera
+
+**gpg --armor --export [jrodsan233y@g.educaand.es](mailto:jrodsan233y@g.educaand.es) > jesus_rodriguez.asc**
+
+<p align="center">
+    <img src="imgu4/32.png" width="auto" >
+</p>
+
+### 2. Importa las claves públicas recibidas de vuestro compañero.
+
+Para importar el archivo usaremos el comando
+**gpg --import jesus_rodriguez.asc**
+
+<p align="center">
+    <img src="imgu4/33.png" width="auto" >
+</p>
+
+### 3. Comprueba que las claves se han incluido correctamente en vuestro keyring.
+
+Para comprobar si se ha añadido correctamente la clave publica usaremos **gpg –list-keys** y para la privada usaremos **gpg –list-secret-keys**
+
+
+<p align="center">
+    <img src="imgu4/34.png" width="auto" >
+</p>
+
+## Cifrado asimétrico con claves publicas
+
+### 1. Cifraremos un archivo cualquiera y lo remitiremos por email a uno de nuestros compañeros que nos proporcionó su clave pública.
+
+Para encriptarlo usaremos
+**gpg --encrypt --recipient jrodsan@g.educaand.es --output jesuscifrado.gpg parajesus.txt **
+
+<p align="center">
+    <img src="imgu4/35.png" width="auto" >
+</p>
+
+donde --recipient es el destinatario el cual sera el unico que con su clave privada podra desencriptarlo
+
+### 2. Nuestro compañero, a su vez, nos remitirá un archivo cifrado para que nosotros lo descifremos.
+
+Nuestro compañero lo desencriptara de la siguient manera
+**gpg --decrypt archivo_cifrado.gpg**
+
+<p align="center">
+    <img src="imgu4/36.png" width="auto" >
+</p>
+
+### 3. Tanto nosotros como nuestro compañero comprobaremos que hemos podido descifrar los mensajes recibidos respectivamente.
+
+Con el siguiente comando
+**gpg --decrypt archivo_cifrado.gpg**
+
+### 4. Por último, enviaremos el documento cifrado a alguien que no estaba en la lista de destinatarios y comprobaremos que este usuario no podrá descifrar este archivo
+
+descifararemos con **gpg --decrypt archivo_cifrado.gpg**
+
+
+<p align="center">
+    <img src="imgu4/37.png" width="auto" >
+</p>
+
+### 5. Para terminar, indica los comandos necesarios para borrar las claves públicas y privadas que posees.
+
+Para borrar las claves privadas y publicas usaremos respectivamente
+**gpg --delete-secret-key NOMBRE**
+**gpg --delete-key NOMBRE**
+
+## tema 4 Exportar clave a un servidor público de claves PGP
+
+### 1. Genera la clave de revocación de tu clave pública para utilizarla en caso de que haya problemas.
+De manera normal el gpg ya crea un par de claves si queremos borrarlas usaremos --gen-revoke <ID> el id lo encontraremos usando el comando gpg –list-keys
+
+para generar la clave usaremos el comando **gpg --gen-revoke nombre**
+además del nombre también podemos darle el RSA correspondiente
+una vez lo hagamos nos hará un par de preguntas y nos generará la nueva clave
+
+
+<p align="center">
+    <img src="imgu4/38.png" width="auto" >
+</p>
+
+### 2. Exporta tu clave pública al servidor pgp.rediris.es
+
+para exportar la clave usaremos el comando
+
+**gpg --send-keys --keyserver pgp.rediris.es RSA**
+
+aun que usaremos el servidor Keys.openpgp.org ya que el anterior no esta activo actualmente
+
+<p align="center">
+    <img src="imgu4/39.png" width="auto" >
+</p>
+
+### 3. Borra la clave pública de alguno de tus compañeros de clase e impórtala ahora del servidor público de rediris
+
+**gpg --delete-key "RSA"**
+**para descargarlo lo haremos de la siguiente manera**
+**gpg --keyserver Keys.openpgp.org --recv-key **
+
+## Tema 5 cifrado asimétrico con openssl
+
+### 1. Genera un par de claves (pública y privada).
+
+Usaremos el algoritmo RSA por lo que tenemos que indicar el opción genrsa 
+**sudo openssl genrsa -aes128 -out key.pem 2048**
+
+
+<p align="center">
+    <img src="imgu4/40.png" width="auto" >
+</p>
+
+### 2. Envía tu clave pública a un compañero.
+Para extraer la clave publica usaremos el comando
+**sudo openssl rsa -in key.pem -pubout -out key.public.pem**
+
+donde:
+-in <pardeclaves> para indicar el par de claves del que queremos extraer la clave pública
+-pubout para indicar que extraiga la clave pública
+-out <ficherosalida> para extraer la clave a un fichero .public.pem
+
+<p align="center">
+    <img src="imgu4/41.png" width="auto" >
+</p>
+
+si hacemos un cat veremos la clave
+
+<p align="center">
+    <img src="imgu4/42.png" width="auto" >
+</p>
+
+### 3. Utilizando la clave pública cifra un fichero de texto y envíalo a tu compañero.
+
+Para cifrar un archivo usaremos el comando:
+
+**openssl pkeyutl -encrypt -in fichero.txt -out fichero.enc -inkey key.public.pem -pubin**
+
+    • -pkeyutl : Este comando de OpenSSL se utiliza para realizar operaciones de cifrado y descifrado con RSA.
+    • -encrypt: Indica que la operación que deseas realizar es el cifrado de datos. En este caso, estás cifrando el contenido del archivo especificado en la opción -in.
+    • -in fichero.txt: Especifica el nombre del archivo de entrada que deseas cifrar. En este caso, fichero.txt contiene los datos que serán cifrados.
+    • -out fichero.enc: Indica el nombre del archivo de salida que contendrá los datos cifrados. En este caso, se ha especificado que el archivo cifrado se llame fichero.enc.
+    • -inkey clave.public.pem: Especifica la clave pública RSA que se utilizará para cifrar los datos.
+
+<p align="center">
+    <img src="imgu4/43.png" width="auto" >
+</p>
+
+### 4. Tu compañero te ha mandado un fichero cifrado, muestra el proceso para el descifrado. 
+Para descifrar un fichero cifrado usaremos el siguiente comando
+**sudo openssl pkeyutl -decrypt -in fichero.enc -out secreto.txt -inkey key.pem**
+<p align="center">
+    <img src="imgu4/44.png" width="auto" >
+</p>
