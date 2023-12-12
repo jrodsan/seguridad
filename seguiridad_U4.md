@@ -47,6 +47,7 @@ de la misma manera para cifrar lo haremos pulsando click derecho al archivo que 
 <p align="center">
     <img src="imgu4/6.png" width="auto" >
 </p>
+
 ## 7. openssl es otra herramienta que nos permite cifrar mensajes de forma simétrica, investiga como se realiza este ejercicio utilizando esta herramienta.
 
 Para instalar la aplicación de openssl iremos a la web [Win32/Win64 OpenSSL Installer for Windows - Shining Light Productions (slproweb.com)](https://slproweb.com/products/Win32OpenSSL.html)  y descargaremos la versión que queramos utilizar en mi caso usaré la .exe lite
