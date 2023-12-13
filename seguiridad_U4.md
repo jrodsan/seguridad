@@ -594,3 +594,18 @@ Para descifrar un fichero cifrado usaremos el siguiente comando
 ### explica brevemente como instalar el certificado digital en el navegador
 
 Preferencias -> Privacidad&Seguridad -> Ver Certificados... -> Sus Certificados -> Importar
+
+## 3. ¿Cómo puedes hacer una copia de tu certificado?, ¿Como vas a realizar la copia de seguridad de tu certificado?. Razona la respuesta.
+
+desde el mismo menu del anteriro ejercicio hacemos los siguiente
+
+    • Pulse el certificado que desea exportar y pulse "hacer copia"
+    • Indique dónde quiere realizar su copia de seguridad (disco duro, cd, unidad de red, etc..) y establezca un nombre al fichero.
+    • Inserte la contraseña maestra de su navegador (si estableció alguna).
+    • Inserte una contraseña y la confirme para proteger la copia de seguridad que va a realizar.
+    • Si todo el proceso es correcto, tendrá un nuevo fichero en la ruta seleccionada.
+
+### 4. Investiga como exportar la clave pública de tu certificado
+
+## Tarea 2: Validación del certificado
+
