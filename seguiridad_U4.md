@@ -587,3 +587,10 @@ Para descifrar un fichero cifrado usaremos el siguiente comando
 <p align="center">
     <img src="imgu4/44.png" width="auto" >
 </p>
+
+
+##  Certificados digitales. HTTPS
+
+### explica brevemente como instalar el certificado digital en el navegador
+
+Preferencias -> Privacidad&Seguridad -> Ver Certificados... -> Sus Certificados -> Importar
