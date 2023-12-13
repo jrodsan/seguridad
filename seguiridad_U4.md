@@ -604,8 +604,26 @@ desde el mismo menu del anteriro ejercicio hacemos los siguiente
     • Inserte la contraseña maestra de su navegador (si estableció alguna).
     • Inserte una contraseña y la confirme para proteger la copia de seguridad que va a realizar.
     • Si todo el proceso es correcto, tendrá un nuevo fichero en la ruta seleccionada.
+<p align="center">
+    <img src="imgu4/45.png" width="auto" >
+</p>
 
 ### 4. Investiga como exportar la clave pública de tu certificado
 
 ## Tarea 2: Validación del certificado
+Instala en tu ordenador el software autofirma y desde la página de VALIDe valida tu certificado. Muestra capturas de pantalla donde se comprueba la validación.
+
+<p align="center">
+    <img src="imgu4/47.png" width="auto" >
+</p>
+
+### Tu debes recibir otro documento firmado por un compañero y utilizando las herramientas anteriores debes visualizar la firma (Visualizar Firma) y (Verificar Firma). ¿Puedes verificar la firma aunque no tengas la clave pública de tu compañero?, ¿Es necesario estar conectado a internet para hacer la validación de la firma?. Razona tus respuestas.
+
+
+## Tarea 4: Autentificación
+Utilizando tu certificado accede a alguna página de la administración  pública )cita médica, becas, puntos del carnet,…). Entrega capturas de pantalla donde se demuestre el acceso a ellas
+<p align="center">
+    <img src="imgu4/48.png" width="auto" >
+</p>
+
 
