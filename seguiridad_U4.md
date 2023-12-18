@@ -816,3 +816,12 @@ Ahora vamos a cambiarle los permisos a nuestro certificado:
 bash
 chmod 444 certs/ca.cert.pem
 ```
+
+Ahora vamos a verificar el certificado con:
+```bash
+openssl x509 -noout -text -in certs/ca.cert.pem
+```
+
+Salida al comando anterior:
+---------------------------------------------------
+Debe recibir el fichero CSR (Solicitud de Firmar un Certificado) de su compañero, debe firmarlo y enviar el certificado generado a su compañero.
