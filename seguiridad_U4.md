@@ -610,6 +610,11 @@ desde el mismo menu del anteriro ejercicio hacemos los siguiente
 
 ### 4. Investiga como exportar la clave pública de tu certificado
 
+para ello tenemos que ir a nuestro navegador y buscar la opcion exportar al mostrar los certificados y siguiendo los pasos exportaremos la clave publica
+<p align="center">
+    <img src="imgu4/50.png" width="auto" >
+</p>
+
 ## Tarea 2: Validación del certificado
 Instala en tu ordenador el software autofirma y desde la página de VALIDe valida tu certificado. Muestra capturas de pantalla donde se comprueba la validación.
 
