@@ -790,13 +790,6 @@ Ahora vamos a crear la clave privada para la entidad certificadora:
 ```bash
 cd /root/ca
 openssl genrsa -aes256 -out private/ca.key.pem 4096
-   Generating RSA private key, 4096 bit long modulus (2 primes)
-   ..................................................++++
-   .++++
-   e is 65537 (0x010001)
-   Enter pass phrase for private/ca.key.pem:
-   Verifying - Enter pass phrase for private/ca.key.pem:
-
 chmod 400 private/ca.key.pem
 ```
 
@@ -823,5 +816,98 @@ openssl x509 -noout -text -in certs/ca.cert.pem
 ```
 
 Salida al comando anterior:
----------------------------------------------------
+```bash
+openssl x509 -noout -text -in certs/ca.cert.pem
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            2d:91:cf:e7:a2:81:a9:e9:e9:17:e8:59:c3:c6:93:e7:89:2b:3b:51
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = ES, ST = granada, L = cijuela, O = IES iliberis, OU = IESI, emailAddress = jrodsan233y@g.educaand.es
+        Validity
+            Not Before: Dec 18 11:35:15 2023 GMT
+            Not After : Dec 13 11:35:15 2043 GMT
+        Subject: C = ES, ST = granada, L = cijuela, O = IES iliberis, OU = IESI, emailAddress = jrodsan233y@g.educaand.es
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (4096 bit)
+                Modulus:
+                    00:b2:21:48:33:1c:b1:37:0a:ea:ae:38:b9:9e:0f:
+                    29:2c:03:e2:f1:28:55:01:c8:dd:8f:94:0a:be:80:
+                    74:d4:f9:a4:08:ad:c6:d1:8b:c5:99:83:c8:68:db:
+                    ab:f8:10:28:f7:2a:ef:a5:53:49:0d:cf:eb:28:28:
+                    51:d9:55:a3:13:a2:8f:df:22:2c:cb:f6:ea:54:86:
+                    8a:da:81:96:06:cf:60:57:37:1b:24:d8:7a:e3:2b:
+                    37:13:88:3d:40:08:6d:45:1e:ef:67:a3:2d:f0:ce:
+                    c3:85:2b:ec:8b:2e:41:ef:86:b4:bb:4a:19:66:c1:
+                    de:bb:7d:da:fd:02:8a:79:cc:a2:e2:cf:25:93:0c:
+                    23:5c:51:31:61:b2:63:62:d5:a4:ec:d8:78:4e:18:
+                    ca:00:9b:9d:82:0c:50:3e:cf:1e:94:d8:82:41:46:
+                    ea:04:92:d4:63:88:01:29:c7:2c:7b:0a:b2:2e:dd:
+                    73:4a:eb:5d:a3:e8:e9:85:d5:75:13:0e:71:0b:c2:
+                    70:91:aa:68:ef:26:9c:e2:f2:f2:3e:64:b3:27:44:
+                    59:8c:0a:16:55:4d:27:9a:d2:65:10:46:43:1f:5b:
+                    ce:5b:56:99:97:39:3d:b7:0f:62:da:84:fb:f2:b9:
+                    30:fa:21:2d:83:53:03:8a:7d:19:34:c2:b1:b0:a4:
+                    78:f8:5c:1c:90:9f:97:f7:58:4e:13:85:9d:ca:fc:
+                    e9:da:15:7b:58:54:5f:37:c2:1d:2b:81:ba:0e:25:
+                    bd:98:05:74:0d:df:f0:c2:a1:1e:2d:95:d7:d6:28:
+                    3f:d4:97:c3:2d:09:cd:fd:fd:2d:c1:fc:aa:21:b1:
+                    be:c7:1c:ba:20:75:fd:d5:1e:34:ba:ae:16:cb:40:
+                    f5:1c:91:43:9d:89:74:e7:b7:e1:90:f6:55:a3:73:
+                    a2:57:c9:3d:e3:ca:76:c3:4b:1f:59:df:25:1a:2e:
+                    b9:58:96:b6:3a:c8:55:00:f1:83:b0:09:c5:a5:da:
+                    c5:65:49:a6:3c:91:61:c2:87:74:7d:fe:ba:65:7d:
+                    f8:2e:a6:96:3a:2c:b4:0f:a4:55:fb:d1:e6:28:0d:
+                    95:7f:ef:17:1d:46:e6:e3:6f:03:91:f8:ad:65:0d:
+                    7b:a9:d8:a4:d3:62:a2:77:5e:8e:3f:a4:e7:50:a0:
+                    32:d4:9f:c0:d7:cf:43:b1:3a:d2:92:ff:5c:c9:fe:
+                    b6:64:0c:11:9f:ce:26:2c:a1:7c:8a:ea:29:ca:50:
+                    7f:43:4d:f5:40:1e:ea:f1:01:4e:36:25:e7:c4:15:
+                    54:19:a1:c3:77:9f:85:18:5d:25:de:66:1f:7c:d9:
+                    a6:e3:96:bb:13:73:e2:13:df:5c:ff:ed:de:8a:06:
+                    10:70:f1
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                85:09:1B:BC:CF:37:3C:BC:48:8A:F5:D1:EF:F7:47:36:73:72:4E:8C
+            X509v3 Authority Key Identifier: 
+                85:09:1B:BC:CF:37:3C:BC:48:8A:F5:D1:EF:F7:47:36:73:72:4E:8C
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        2c:1c:5b:20:d7:0c:88:d4:9f:21:1d:bf:3b:51:43:68:0e:20:
+        7b:f6:be:17:91:d3:39:a8:e3:56:50:a3:39:72:6f:93:ab:e9:
+        0e:29:35:e1:0f:ca:f3:1e:51:25:d2:4e:26:5e:9b:64:2a:c5:
+        1e:94:52:85:cd:fd:ae:db:f5:43:80:88:5d:ca:bd:be:ad:07:
+        41:c2:01:21:38:d4:05:c9:9c:e3:0b:8a:bf:88:14:3b:10:64:
+        f5:69:26:86:3a:cb:31:79:03:17:23:61:06:b2:04:a2:2f:db:
+        15:2e:1e:72:9b:a7:de:85:c6:2d:36:78:d6:62:0e:e2:6d:b8:
+        b7:ae:52:cb:6c:f9:ac:6d:06:31:05:d4:d2:6a:73:ef:86:7f:
+        85:1f:d6:ed:ef:31:bf:81:00:50:e2:51:76:6d:38:2e:0e:fa:
+        6d:e4:aa:c1:03:ef:02:a0:6e:12:e3:4f:97:68:47:c8:09:46:
+        dd:fb:fd:9f:70:da:9b:ba:e3:fa:22:08:3d:17:a4:16:3f:84:
+        bb:6a:94:ca:9b:8b:5e:d3:94:a8:bb:64:12:7c:b4:89:20:59:
+        a6:9a:40:7c:aa:0b:8f:d8:95:de:15:6b:4b:7f:67:ad:f8:88:
+        1e:1d:0e:a8:0f:67:ae:d2:f7:09:94:a3:c3:d9:0c:6f:8a:b3:
+        9d:43:3e:07:72:8b:ff:d1:0b:e2:58:71:e3:ae:be:70:7f:98:
+        f3:d1:7f:13:07:f5:8f:22:c1:37:2f:73:2b:7f:3d:8e:4c:45:
+        70:53:a9:30:6f:4c:df:1c:79:d7:d0:63:c1:0a:e5:fa:9e:5e:
+        36:ce:03:76:52:15:0c:6e:d8:fe:02:67:d7:9c:d7:de:1b:3c:
+        49:e0:70:2f:82:45:46:2e:6b:4c:d6:2a:c8:2c:52:1c:a8:b1:
+        43:40:4b:9d:48:a2:82:2d:61:fe:97:5a:3c:5a:75:4d:db:8d:
+        0e:bc:c1:3e:4b:00:d9:9f:1d:c0:76:c7:77:df:f7:2a:8b:42:
+        bd:39:f0:35:66:7f:f5:20:e4:21:87:ba:db:ff:ef:7a:c7:16:
+        e1:ee:3c:e0:76:61:eb:6a:0e:6c:12:4f:ca:76:75:87:57:8c:
+        ac:89:a4:e5:1e:56:02:ed:54:e7:ae:cc:9f:5f:11:d3:45:f8:
+        41:08:fd:f7:3f:ef:e2:e8:11:ea:e3:dc:89:08:c1:c8:63:70:
+        c6:f7:59:3c:81:a6:3e:ea:ff:27:ad:85:f0:5b:6b:0f:f0:3c:
+        31:76:08:2e:7f:18:dd:9a:2a:28:42:62:96:55:f2:d2:e2:92:
+        b6:47:4c:8b:e4:d7:2d:9d:9f:c4:de:d2:ed:32:58:e6:f6:df:
+        67:ad:2e:1a:1f:bf:e8:f7
+```
 ### Debe recibir el fichero CSR (Solicitud de Firmar un Certificado) de su compañero, debe firmarlo y enviar el certificado generado a su compañero.
