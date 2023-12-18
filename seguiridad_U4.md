@@ -824,4 +824,4 @@ openssl x509 -noout -text -in certs/ca.cert.pem
 
 Salida al comando anterior:
 ---------------------------------------------------
-Debe recibir el fichero CSR (Solicitud de Firmar un Certificado) de su compañero, debe firmarlo y enviar el certificado generado a su compañero.
+### Debe recibir el fichero CSR (Solicitud de Firmar un Certificado) de su compañero, debe firmarlo y enviar el certificado generado a su compañero.
