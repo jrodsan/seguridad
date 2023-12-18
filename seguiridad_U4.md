@@ -785,3 +785,34 @@ authorityKeyIdentifier = keyid,issuer
 keyUsage = critical, digitalSignature
 extendedKeyUsage = critical, OCSPSigning
 ```
+
+Ahora vamos a crear la clave privada para la entidad certificadora:
+```bash
+cd /root/ca
+openssl genrsa -aes256 -out private/ca.key.pem 4096
+   Generating RSA private key, 4096 bit long modulus (2 primes)
+   ..................................................++++
+   .++++
+   e is 65537 (0x010001)
+   Enter pass phrase for private/ca.key.pem:
+   Verifying - Enter pass phrase for private/ca.key.pem:
+
+chmod 400 private/ca.key.pem
+```
+
+Ahora creamos el certificado raíz de la entidad certificadora:
+```bash
+cd /root/ca
+openssl req -config openssl.cnf \
+      -key private/ca.key.pem \
+      -new -x509 -days 7300 -sha256 -extensions v3_ca \
+      -out certs/ca.cert.pem
+```
+
+Ahora nos pedirá que rellenemos los metadatos de nuevo, pero si le damos a espacio a cada uno de ellos, este nos añadirá los metadatos por defecto que le hemos indicado en el fichero openssl.cnf
+Ahora vamos a cambiarle los permisos a nuestro certificado:
+
+```
+bash
+chmod 444 certs/ca.cert.pem
+```
